@@ -21,7 +21,16 @@ namespace tabuleiro
             this.cor = cor;
             this.qteMovimentos = 0;
         }
+        
+        public void incrementarQteMovimento()
+        {
+            qteMovimentos++;
+        }
 
+        public void decrementarQteMovimento()
+        {
+            qteMovimentos--;
+        }
         public abstract bool[,] movimentosPossiveis();
 
         public bool existeMovimentosPossiveis()
@@ -44,10 +53,7 @@ namespace tabuleiro
         {
             return movimentosPossiveis()[pos.linha, pos.coluna];
         }
-        public void incrementarQteMovimento()
-        {
-            qteMovimentos++;
-        }
+        
 
 
     }
