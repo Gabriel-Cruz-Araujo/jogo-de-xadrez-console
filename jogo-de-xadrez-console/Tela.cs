@@ -10,7 +10,7 @@ namespace xadrez_console
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
             imprimirTabuleiro(partida.tab);
-            Console.WriteLine();
+            
             imprimirPecasCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
@@ -34,11 +34,11 @@ namespace xadrez_console
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
-            Console.WriteLine("Peças Capturadas: ");
-            Console.WriteLine("Brancas: ");
+            Console.WriteLine("Peças capturadas: ");
+            Console.Write("Brancas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
             Console.WriteLine();
-            Console.WriteLine("Pretas: ");
+            Console.Write("Pretas: ");
             ConsoleColor aux = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
             imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
@@ -47,12 +47,12 @@ namespace xadrez_console
 
         public static void imprimirConjunto(HashSet<Peca> conjunto)
         {
-            Console.Write("[");
+            Console.Write('[');
             foreach (Peca x in conjunto)
             {
                 Console.Write(x + " ");
             }
-            Console.WriteLine("]");
+            Console.Write("]");
         }
 
         public static void imprimirTabuleiro(Tabuleiro tab)
